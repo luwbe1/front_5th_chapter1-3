@@ -3,13 +3,13 @@ import { generateItems } from "./utils";
 import { ComplexForm } from "./components/ComplexForm";
 import { Header } from "./components/Header";
 import { ItemList } from "./components/ItemList";
+import { ThemeWrapper } from "./components/ThemeWrapper";
 import { NotificationSystem } from "./components/NotificationSystem";
 import {
   LoginProvider,
   NotificationProvider,
   ThemeProvider,
 } from "./providers";
-import { useThemeContext } from "./context/useThemeContext";
 import { Item } from "./types";
 import { memo } from "./@lib";
 
@@ -41,14 +41,8 @@ const AppContainer: React.FC = () => {
 
 const AppLayout = memo(
   ({ items, addItems }: { items: Item[]; addItems: () => void }) => {
-    const { theme } = useThemeContext();
-
     return (
-      <div
-        className={`min-h-screen ${
-          theme === "light" ? "bg-gray-100" : "bg-gray-900 text-white"
-        }`}
-      >
+      <ThemeWrapper>
         <Header />
         <div className="container mx-auto px-4 py-8">
           <div className="flex flex-col md:flex-row">
@@ -61,7 +55,7 @@ const AppLayout = memo(
           </div>
         </div>
         <NotificationSystem />
-      </div>
+      </ThemeWrapper>
     );
   }
 );
