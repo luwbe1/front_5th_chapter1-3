@@ -23,7 +23,5 @@ export function memo<P extends object>(
     return element;
   };
 
-  MemoizedComponent.displayName = `Memo(${Component.displayName || Component.name})`;
-
   return MemoizedComponent;
 }
