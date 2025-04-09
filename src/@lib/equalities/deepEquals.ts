@@ -1,6 +1,4 @@
-const isObject = (obj: unknown): obj is Record<string, unknown> => {
-  return obj !== null && typeof obj === "object";
-};
+import { isObject } from "../../utils.ts";
 
 // deepEquals 함수는 두 값의 깊은 비교를 수행합니다.
 export function deepEquals<T>(objA: T, objB: T): boolean {
@@ -35,5 +33,6 @@ export function deepEquals<T>(objA: T, objB: T): boolean {
       return keysB.includes(key) && deepEquals(objA[key], objB[key]);
     });
   }
+
   return objA === objB;
 }
