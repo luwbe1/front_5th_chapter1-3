@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { renderLog } from "../utils";
 import { Item } from "../types";
 import { memo } from "../@lib";
-import { useThemeContext } from "../providers";
+import { useThemeContext } from "../context/useThemeContext";
 
 // ItemList 컴포넌트
 export const ItemList: React.FC<{

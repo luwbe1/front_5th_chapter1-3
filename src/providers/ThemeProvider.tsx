@@ -1,13 +1,12 @@
-import React, { useMemo, useState, createContext, useContext } from "react";
+import React, { useMemo, useState } from "react";
+import { ThemeContext } from "../context/useThemeContext";
 
-interface ThemeContextType {
-  theme: string;
-  toggleTheme: () => void;
-}
+// interface ThemeContextType {
+//   theme: string;
+//   toggleTheme: () => void;
+// }
 
-export const ThemeContext = createContext<ThemeContextType | undefined>(
-  undefined
-);
+// const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({
   children,
@@ -25,10 +24,10 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({
   );
 };
 
-export const useThemeContext = () => {
-  const context = useContext(ThemeContext);
-  if (context === undefined) {
-    throw new Error("useThemeContext must be used within a ThemeProvider");
-  }
-  return context;
-};
+// export const useThemeContext = () => {
+//   const context = useContext(ThemeContext);
+//   if (context === undefined) {
+//     throw new Error("useThemeContext must be used within a ThemeProvider");
+//   }
+//   return context;
+// };

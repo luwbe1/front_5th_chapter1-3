@@ -1,6 +1,7 @@
 import React from "react";
 import { renderLog } from "../utils";
-import { useThemeContext, useLoginContext } from "../providers";
+import { useLoginContext } from "../context/useLoginContext";
+import { useThemeContext } from "../context/useThemeContext";
 import { memo } from "../@lib";
 
 // Header 컴포넌트

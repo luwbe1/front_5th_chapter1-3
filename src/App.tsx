@@ -8,8 +8,8 @@ import {
   LoginProvider,
   NotificationProvider,
   ThemeProvider,
-  useThemeContext,
 } from "./providers";
+import { useThemeContext } from "./context/useThemeContext";
 import { Item } from "./types";
 import { memo } from "./@lib";
 

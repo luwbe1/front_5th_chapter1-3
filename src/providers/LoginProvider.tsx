@@ -1,16 +1,7 @@
-import React, { useMemo, useState, createContext, useContext } from "react";
+import React, { useMemo, useState } from "react";
 import { User } from "../types";
-import { useNotificationContext } from "../providers/NotificationProvider";
-
-interface LoginContextType {
-  user: User | null;
-  login: (email: string, password: string) => void;
-  logout: () => void;
-}
-
-export const LoginContext = createContext<LoginContextType | undefined>(
-  undefined
-);
+import { useNotificationContext } from "../context/useNotificationContext";
+import { LoginContext } from "../context/useLoginContext";
 
 export const LoginProvider: React.FC<{ children: React.ReactNode }> = ({
   children,
@@ -33,12 +24,4 @@ export const LoginProvider: React.FC<{ children: React.ReactNode }> = ({
   return (
     <LoginContext.Provider value={value}>{children}</LoginContext.Provider>
   );
-};
-
-export const useLoginContext = () => {
-  const context = useContext(LoginContext);
-  if (context === undefined) {
-    throw new Error("useLoginContext must be used within a LoginProvider");
-  }
-  return context;
 };
