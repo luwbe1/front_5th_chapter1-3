@@ -1,2 +1,2 @@
 export const BASE_PATH =
-  import.meta.env.MODE === "production" ? "/front_5th_chapter1-3" : "";
+  process.env.NODE_ENV === "production" ? "/front_5th_chapter1-3" : "";
